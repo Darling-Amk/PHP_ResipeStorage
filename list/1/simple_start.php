@@ -11,8 +11,8 @@
     <hr>
 
     <?php
+    error_reporting(0);
     
-    error_reporting(E_ERROR | E_PARSE);
     /* Описание скалярных переменных */
 
     $a      = 15;        # целое
@@ -53,9 +53,9 @@
     array_push($table[1],1,'a = {$a}, <br>fl = {$fl},<br> boo = " .( ($boo==TRUE) ? "True":"False") <br>str = \"{$str}\"',"a = {$a},<br> fl = {$fl},<br> boo = " .( ($boo==TRUE) ? "True":"False"). ",<br>str = \"{$str}\"");
     
     //2
-    error_reporting(E_ERROR | E_PARSE);
+    
     array_push($table[2],2,'$a+$str',$a+$str);
-    error_reporting(~E_ERROR | ~E_PARSE);
+    
 
     //3
     array_push($table[3],3,'"? a > str :".( ($a>$str) ? "True":"False") . "<br>" . \'? a < str :\' . ( ($a<$str) ? "True":"False") . "<br>" . \'? a == str :\' . ( ($a==$str) ? "True":"False") . "<br>" . \'? a === str :\' . ( ($a===$str) ? "True":"False")', "? a > str :".( ($a>$str) ? "True":"False") . "<br>" . '? a < str :' . ( ($a<$str) ? "True":"False") . "<br>" . '? a == str :' . ( ($a==$str) ? "True":"False") . "<br>" . '? a === str :' . ( ($a===$str) ? "True":"False") );
@@ -67,9 +67,9 @@
     array_push($table[5],5,'{$s1},{$s2}',"{$s1}, {$s2}");
 
     //6
-    error_reporting(E_ERROR | E_PARSE);
+    
     array_push($table[6],6,'{$mas[\'one\']}, {$mas[2]}, .var_export($mas[3],True)' , "{$mas['one']}, {$mas[2]},".var_export($mas[3],True));
-    error_reporting(~E_ERROR | ~E_PARSE);
+    
     //7
     ob_start();
     var_dump($mas);
