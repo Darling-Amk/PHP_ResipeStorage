@@ -24,9 +24,6 @@
     <title>Список</title>
 </head>
 <body>
-    <?php 
-        echo "заебало нахуй";
-    ?>
     <header>
         <img src="list/img/1.gif" alt="Логотип с popcat" class="logo">
         <h2>Список выполненных лабораторных работ</h2>
