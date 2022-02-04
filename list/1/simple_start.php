@@ -11,7 +11,7 @@
     <hr>
 
     <?php
-    
+    error_reporting(E_ERROR | E_PARSE);
     /* Описание скалярных переменных */
 
     $a      = 15;        # целое
@@ -76,9 +76,9 @@
     ob_end_clean();
     
     //8
-    error_reporting(E_ERROR | E_PARSE);
+    
     array_push($table[8],8,'strval($mas) .<br>[  implode(" , ",$mas)]', "" . strval($mas) ."<br>[".  implode(" , ",$mas)."]");
-    error_reporting(~E_ERROR | ~E_PARSE);
+
 
     //9
     $name="a";
@@ -98,9 +98,9 @@
     array_push($table[12],12,'$file_list=`ls -a`',$file_list);
 
     //13
-    error_reporting(E_ERROR | E_PARSE);
+
     array_push($table[13],13,'($str.$nol + 1).=>.($str.$nol . 1)',"" . $str . $nol + 1 . '=>' . $str.$nol . "1");
-    error_reporting(~E_ERROR | ~E_PARSE);
+
 
     //14
     $line = __LINE__;
