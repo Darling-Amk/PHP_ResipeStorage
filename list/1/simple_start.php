@@ -11,6 +11,7 @@
     <hr>
 
     <?php
+    
     error_reporting(E_ERROR | E_PARSE);
     /* Описание скалярных переменных */
 

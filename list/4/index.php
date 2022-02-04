@@ -71,18 +71,6 @@
     }
     echo '</li>';
 
-    echo '<li>child1<br>';
-    $child1 = new NoteChild("1","2","3");
-    $child1->note_show();
     
-    $child1_copy = clone $child1;
-    $child1_copy->note_show();
-    echo '</li>';
-
-    echo '<li>cut_note<br>';
-    $child2 = new NoteChild("11111111111111111111111111111","1111111111111111111111111","11111111111111111111111");
-    $child2->cut_note();
-    $child2->note_show();
-    echo '</li>';
 ?>
 </ol>
