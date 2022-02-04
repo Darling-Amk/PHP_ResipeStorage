@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    
     <link rel="apple-touch-icon" sizes="76x76" href="/list/ico/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/list/ico/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/list/ico/favicon-16x16.png">
@@ -23,6 +24,9 @@
     <title>Список</title>
 </head>
 <body>
+    <?php 
+        echo "заебало нахуй";
+    ?>
     <header>
         <img src="list/img/1.gif" alt="Логотип с popcat" class="logo">
         <h2>Список выполненных лабораторных работ</h2>

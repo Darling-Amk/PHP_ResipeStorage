@@ -44,7 +44,7 @@
     echo '</li>';
 
     echo '<li>конструктор<br>';
-    $note2 = new NotePad("891141121**","Никита","Кручинин") ;
+    $note2 = new NotePad("8977777771148881121**","Никита","") ;
     $note2->note_show();
     echo '</li>';
 
@@ -84,14 +84,7 @@
     $child2->cut_note();
     $child2->note_show();
     echo '</li>';
-    echo '<li>child1<br></li>';
-    echo '<li>child1<br></li>';
-
-    echo '<li>child1<br></li>';
-
-    echo '<li>child1<br></li>';
-
-    echo '<li>child1<br></li>';
+   
 
 ?>
 </ol>
