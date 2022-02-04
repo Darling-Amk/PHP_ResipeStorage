@@ -36,12 +36,13 @@
     /* Описание константы */
 
     define("HOST", "kappa.cs.karelia.ru");
-
+    define("ROWS", 17);
+    define(ROWS, 17);
     /* Вывод значения переменной на экран */
 
 
     $table = array();
-    define(ROWS, 17);
+    
     for($i=0;$i<ROWS;$i++){
         array_push($table,array());
     }
