@@ -36,14 +36,13 @@
     /* Описание константы */
 
     define("HOST", "kappa.cs.karelia.ru");
-    define("ROWS", 17);
-    define(ROWS, 17);
+    $ROWS = 17;
     /* Вывод значения переменной на экран */
 
 
     $table = array();
     
-    for($i=0;$i<ROWS;$i++){
+    for($i=0;$i<$ROWS;$i++){
         array_push($table,array());
     }
 
@@ -141,7 +140,7 @@
     array_push($table[16], ("Без параметра:" .f_color() ."C параметром 1:". f_color(1)."C параметром 2:" . f_color(2)));
 
     echo '<table border="5">';
-    for($i=0;$i<ROWS;$i++){
+    for($i=0;$i<$ROWS;$i++){
         echo "</tr>";
         for ($j=0; $j < 3; $j++) { 
             echo "<td>";
