@@ -69,7 +69,7 @@
     <hr>
     <em>
         <p align = "right">Зима 2022</p>
-        <p align = "right">Кручинин Никита 22203</p>
+        <!-- <p align = "right">Кручинин Никита 22203</p> -->
     </em>
    
 </body>
