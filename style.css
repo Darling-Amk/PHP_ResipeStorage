@@ -1,0 +1,48 @@
+h2{
+    color:rgb(68, 12, 197);
+}
+body{
+    font-family: 'Roboto Slab', serif;
+    
+    background-color: rgba(148, 184, 218, 0.795);
+}
+a{
+    text-decoration: none;
+    color:rgb(233, 150, 211);
+}
+ul{
+    list-style: none;
+}
+
+
+header{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    padding: 10px;
+    height: 100px;
+    border-radius: 1000px;
+}
+.mir{
+    transform: scale(-1, 1);
+}
+
+.content{
+    padding-left: 20vw;
+    height:60vh;
+    font-size: 20px;
+    padding-bottom: 10vh;
+    
+}
+.child{
+    height: 15vh;
+}
+h3{
+    padding: none;
+    margin: none;
+    font-size: 20px;
+    color:#08131d;
+}
