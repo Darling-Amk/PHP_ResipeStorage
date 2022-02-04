@@ -37,14 +37,14 @@
     }
     echo "</li>";
 
-    echo '<li>note_show TEXT_SIZE br>';
+    echo '<li>note_show TEXT_SIZE <br>';
     $note1 = new NotePad();
     $note1->note_show();
     echo "TEXT_SIZE = ". $note1::TEXT_SIZE ."<br>";
     echo '</li>';
 
     echo '<li>конструктор<br>';
-    $note2 = new NotePad("8977777771148881121**","Никита","") ;
+    $note2 = new NotePad("88005553535","Я","ТОЖЕЯ") ;
     $note2->note_show();
     echo '</li>';
 
