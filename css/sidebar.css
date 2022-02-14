@@ -7,30 +7,26 @@
     /* min-width: 30%; */
     width: 250px;
     max-width: 250px;
-    
-    
 }
 .sidebar__menu{
     margin: 0; /* Отступ слева в браузере IE и Opera */
     padding: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
-    /* margin: auto; */
 }
 .sidebar__label{
-    
     height: 46px;
     font-size: 16px;
     color:#074EE8;
     background-color:#E0EAFF;
-    
 }
 .cnt{
     align-items: center;
 }
 .sidebar__item{
     padding-top:10px;
-    height: 36px;
+    min-height: 36px;
     font-size: 16px;
-    text-indent: 48px;
+    /* text-indent: 48px; */
+    padding-left: 48px;
     text-align: left;
     list-style-type: none;
 }
