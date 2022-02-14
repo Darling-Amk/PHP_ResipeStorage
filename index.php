@@ -1,3 +1,25 @@
+<?php
+    session_start();
+    $items = array(
+        "Яблоки",
+        "Закатник",
+        "Яблочный напиток",
+        "Ягодный напиток с мятой",
+        "Сок из волчьих крюков",
+        "Святая вода",
+        "Пиала чая",
+    );
+    $date = [
+        "Яблоки" => "Яблоко — еда, которую игрок может получить, собирая пищу во время исследований.Яблоко восстанавливает 300 HP выбранному персонажу. Как и большую часть еды, его нельзя применить на персонажей других игроков в Режиме совместной игры.",
+        "Закатник" => "что то",
+        "Яблочный напиток" => "что то",
+        "Ягодный напиток с мятой" => "что то",
+        "Сок из волчьих крюков" => "что то",
+        "Святая вода" => "что то",
+        "Пиала чая" => "что то",
+    ] ;           
+
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -35,40 +57,21 @@
 
     <!-- sidebar -->
     <div class="sidebar__container">
+        <form action="index.php" method="get">
             <ul class="sidebar__menu">
                 <li class="sidebar__label">
                     <div class="cnt">
                     <img src="img/globe.svg" alt="Logo">  RS
                     </div>
                 </li>
-                <li class="sidebar__item">Яблоки</li>
-                <li class="sidebar__item">Груши</li>
-                <li class="sidebar__item">Чай</li>
-                <li class="sidebar__item">Кофе</li>
-                <li class="sidebar__item">Монштат</li>
-                <li class="sidebar__item">Яблоки</li>
-                <li class="sidebar__item">Груши</li>
-                <li class="sidebar__item">Чай</li>
-                <li class="sidebar__item">Кофе</li>
-                <li class="sidebar__item">Монштат</li>
-                <li class="sidebar__item">Яблоки</li>
-                <li class="sidebar__item">Груши</li>
-                <li class="sidebar__item">Чай</li>
-                <li class="sidebar__item">Кофе</li>
-                <li class="sidebar__item">Монштат</li>
-                <li class="sidebar__item">Яблоки</li>
-                <li class="sidebar__item">Груши</li>
-                <li class="sidebar__item">Чай</li>
-                <li class="sidebar__item">Кофе</li>
-                <li class="sidebar__item">Монштат</li>
-                <li class="sidebar__item">Яблоки</li>
-                <li class="sidebar__item">Груши</li>
-                <li class="sidebar__item">Чай</li>
-                <li class="sidebar__item">Кофе</li>
-                <li class="sidebar__item">Монштат</li>
-
-                
+                <?php
+                for($i = 0 ;$i<10 ;$i++)
+                    foreach( $items as $item){
+                        echo"<li class='sidebar__item'><a href='?id={$item}'>{$item}</a></li>";
+                    };
+                ?>
             </ul>        
+            </form>
     </div>
     <!-- /sidebar -->
     
@@ -78,12 +81,26 @@
     
     
     <div class="info__container">
-        <h1 class="info__name">Миндальный тофу</h1>
+        <?php
+         if(isset($_GET['id'])){
+
+            echo "<h1 class='info__name'>".$_GET["id"]."</h1>";
+            
+        }else
+        echo "<h1 class='info__name'>Hello, traveler!</h1>";
+        ?>
         <div class="info__container__text">
-            <p>Миндальный тофу — это еда, которую может приготовить игрок. Рецепт Миндального тофу можно получить, исследуя кухонный стол на кухне Постоялого двора «Ваншу». Блюдо Миндальный тофу также можно купить у Верр Голдет на Постоялом дворе «Ваншу» за 1,550 Моры (максимум 2 в день).
-                В зависимости от качества, Миндальный тофу увеличивает атаку всех членов отряда на 66 / 81 / 95 в течение 300 секунд. Как и у большей части еды, эффект этого блюда не действует на персонажей других игроков в Режиме совместной игры.
-                
-                Когда Сяо готовит Миндальный тофу, у него есть шанс приготовить «Сладкий сон» вместо этого.</p>
+            <?php
+            if(isset($_GET['id'])){
+                // print_r($_GET);
+                echo "<p>" .
+                    $date[$_GET["id"]] .
+                "</p>";
+            }else
+            echo '
+            <p>Здравствуй путник! выбери любой интересующий рецепт</p>
+                ';
+                ?>
         </div>
     </div>
     
