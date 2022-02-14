@@ -1,0 +1,33 @@
+.header__container{
+    display: flex;
+    border-bottom: 2px   solid #AAAAAA;
+    height: 126px;
+}
+.header__title{
+    line-height:0px;
+    color: #074EE8;
+    font-size: 40px;
+    font-weight: 700;
+}
+.header__label{
+    color: #111111;
+    font-size: 18px;
+    font-weight: 400;
+}
+.header__label__conteiner{
+    width: 400px;
+    padding-left: 10vw;
+    padding-top: 10px;
+    height: 100%; 
+    
+}
+.header__form{
+    margin-left: auto;
+}
+.header__form input{
+    width: 176px;
+    margin-left: 20px;
+}
+.header__form__button{
+    width: 120px;
+}
