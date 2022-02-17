@@ -4,6 +4,7 @@
     border-bottom: 2px   solid #AAAAAA;
     height: 126px;
 }
+
 @media (max-width:1440px){
     .header__container{
         height: 146px;
@@ -17,6 +18,7 @@
         display: none;
     }
 }
+
 .header__title{
     line-height:0px;
     color: #074EE8;
@@ -31,7 +33,7 @@
 
 .header__label__conteiner{
     padding-left: 100px;
-    min-width: 400px;
+    
     padding-top: 10px;
     height: 100%; 
     
@@ -39,7 +41,17 @@
 @media (max-width:1440px) {
     .header__label__conteiner{
         padding-left: 10px;
+        
     }
+}
+@media (max-width:768px) {
+    .header__label__conteiner{
+        min-width: 200px;
+    }
+    .header__title{
+        font-size: 26px;
+    }
+
 }
 .bugar{
     display: none;
@@ -91,6 +103,15 @@
         width:176px;
     }
 }
+@media (max-width:375px){
+    .header__form{
+        width:100px;
+    }
+  
+    .header__form input{
+        width:100px;
+    }
+}
 .form_cont{
     margin-top: 10px;
     display: flex;
@@ -118,4 +139,18 @@
 }
 .hid{
     opacity: 0;
+}
+.noize{
+    /* justify-self:end; */
+    margin: auto;
+    /* height: 40px; */
+    /* width: 40px; */
+    /* background-color: #074EE8; */
+    cursor: pointer;
+}
+.PlayBtn{
+    background-color: aliceblue;
+}
+.PauseBtn{
+    background-color: aliceblue;
 }

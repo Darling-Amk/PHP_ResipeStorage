@@ -3,6 +3,9 @@ body{
     background-color: #E0EAFF
     
 }
+a{
+    text-decoration: none;
+}
 .wrapper{
     max-height: 100%;
     overflow: hidden;
