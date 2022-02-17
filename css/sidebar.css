@@ -46,10 +46,11 @@
     height: 32px;
 }
 .sidebar__bugar{
-    min-height: 100%;
+    min-height:2500px ;
     min-width: 100%;
     visibility:hidden;
     position: absolute;
+    
     background: rgba(0, 0, 0, 0.9);
     z-index: 2;
     font-size: 50px;
