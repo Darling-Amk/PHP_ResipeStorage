@@ -1,16 +1,20 @@
 .sidebar__container{
+    
     border-right: 2px   solid #AAAAAA;
     border-bottom: 2px   solid #AAAAAA;
     background-color: white;
-    float: left;
     height: 100%;
-    /* min-width: 30%; */
     width: 250px;
     max-width: 250px;
 }
+@media (max-width:1440px) {
+    .sidebar__container{
+        display: none;
+    }
+}
 .sidebar__menu{
-    margin: 0; /* Отступ слева в браузере IE и Opera */
-    padding: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+     margin: 0; 
+     padding: 0;  
 }
 .sidebar__label{
     height: 46px;
@@ -18,19 +22,50 @@
     color:#074EE8;
     background-color:#E0EAFF;
 }
-.cnt{
-    align-items: center;
-}
+
 .sidebar__item{
     padding-top:10px;
-    min-height: 36px;
+    height: 36px;
     font-size: 16px;
-    /* text-indent: 48px; */
-    padding-left: 48px;
+    text-indent: 48px;
     text-align: left;
     list-style-type: none;
 }
 .sidebar__item:hover{
     color:#074EE8;
     background-color:#eeeeee;
+    cursor: pointer;
+}
+.cnt{
+    display: flex;
+    height: 80%;
+    margin-left: 40px;
+    font-size: 32px;
+}
+.cnt img{
+    height: 32px;
+}
+.sidebar__bugar{
+    width: 100%;
+    visibility:hidden;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2;
+    font-size: 50px;
+}
+.bugar__item{
+    color:#fff;
+    font-size: 30px;
+    height: 40px;
+    margin: auto;
+}
+@media (max-width:1440px) {
+    .sidebar__bugar{
+        display: inline;
+    }
+}
+@media (min-width:1440px) {
+    .sidebar__bugar{
+        display: none;
+    }
 }
