@@ -1,3 +1,18 @@
+<?php
+    $res = file_get_contents('db.json');
+
+    $res = json_decode($res,true);
+    // echo'<pre>';
+    // // print_r($res);
+    // foreach($res as $id=>$val){
+    //     echo "{$id}=>\n";
+    //     echo "\tname:{$val['name']}\n";
+    //     echo "\timg_name:{$val['img_name']}\n";
+    //     echo "\trecipe:{$val['recipe']}\n";
+    // }
+    // echo'</pre>';
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -55,68 +70,25 @@
                             RS 
                         </div>
                     </li>
-                    <li class="sidebar__item">Яблоки</li>
-                    <li class="sidebar__item">Груши</li>
-                    <li class="sidebar__item">Чай</li>
-                    <li class="sidebar__item">Кофе</li>
-                    <li class="sidebar__item">Монштат</li>
-                    <li class="sidebar__item">Яблоки</li>
-                    <li class="sidebar__item">Груши</li>
-                    <li class="sidebar__item">Чай</li>
-                    <li class="sidebar__item">Кофе</li>
-                    <li class="sidebar__item">Монштат</li>
-                    <li class="sidebar__item">Яблоки</li>
-                    <li class="sidebar__item">Груши</li>
-                    <li class="sidebar__item">Чай</li>
-                    <li class="sidebar__item">Кофе</li>
-                    <li class="sidebar__item">Монштат</li>
-                    <li class="sidebar__item">Яблоки</li>
-                    <li class="sidebar__item">Груши</li>
-                    <li class="sidebar__item">Чай</li>
-                    <li class="sidebar__item">Кофе</li>
-                    <li class="sidebar__item">Монштат</li>
-                    <li class="sidebar__item">Яблоки</li>
-                    <li class="sidebar__item">Груши</li>
-                    <li class="sidebar__item">Чай</li>
-                    <li class="sidebar__item">Кофе</li>
-                    <li class="sidebar__item">Монштат</li>
-
-                    
+                    <?php
+                    for($i=0;$i<10;$i++)
+                        foreach($res as $id=>$val){
+                            echo"<a href='?id={$id}'><li class='sidebar__item'>{$val['name']}</li></a>";
+                        }
+                    ?>
+                   
                 </ul>        
         </div>
 
         <div class="sidebar__bugar">
             <ul class="sidebar__menu">
-            <li class="sidebar__item bugar__item">Яблоки</li>
-            <li class="sidebar__item bugar__item">Груши</li>
-            <li class="sidebar__item bugar__item">Чай</li>
-            <li class="sidebar__item bugar__item">Кофе</li>
-            <li class="sidebar__item bugar__item">Монштат</li>
-            
-            <li class="sidebar__item bugar__item">Яблоки</li>
-            <li class="sidebar__item bugar__item">Груши</li>
-            <li class="sidebar__item bugar__item">Чай</li>
-            <li class="sidebar__item bugar__item">Кофе</li>
-            <li class="sidebar__item bugar__item">Монштат</li>
-
-            <li class="sidebar__item bugar__item">Яблоки</li>
-            <li class="sidebar__item bugar__item">Груши</li>
-            <li class="sidebar__item bugar__item">Чай</li>
-            <li class="sidebar__item bugar__item">Кофе</li>
-            <li class="sidebar__item bugar__item">Монштат</li>
-
-            <li class="sidebar__item bugar__item">Яблоки</li>
-            <li class="sidebar__item bugar__item">Груши</li>
-            <li class="sidebar__item bugar__item">Чай</li>
-            <li class="sidebar__item bugar__item">Кофе</li>
-            <li class="sidebar__item bugar__item">Монштат</li>
-
-            <li class="sidebar__item bugar__item">Яблоки</li>
-            <li class="sidebar__item bugar__item">Груши</li>
-            <li class="sidebar__item bugar__item">Чай</li>
-            <li class="sidebar__item bugar__item">Кофе</li>
-            <li class="sidebar__item bugar__item">Монштат</li>
-
+            <!-- <li class="sidebar__item bugar__item">Яблоки</li> -->
+            <?php
+                    for($i=0;$i<10;$i++)
+                        foreach($res as $id=>$val){
+                            echo"<a href='?id={$id}'><li class='sidebar__item bugar__item'>{$val['name']}</li></a>";
+                        }
+            ?>
 
 
             
@@ -125,7 +97,15 @@
         <!-- /sidebar -->
 
             <div class="info__container">
-                <h1 class="info__name">Миндальный тофу</h1>
+                <?php
+                    if(isset($_GET['id'])){
+                        echo"<h1 class='info__name'>{$res[$_GET['id']]['name']}</h1>";
+                    }
+                    else{
+                        echo'<h1 class="info__name">Привет путешественник!</h1>';
+                    }
+                ?>
+                
                 <div class="info__container__text">
                     <p>Миндальный тофу — это еда, которую может приготовить игрок. Рецепт Миндального тофу можно получить, исследуя кухонный стол на кухне Постоялого двора «Ваншу». Блюдо Миндальный тофу также можно купить у Верр Голдет на Постоялом дворе «Ваншу» за 1,550 Моры (максимум 2 в день).
                         В зависимости от качества, Миндальный тофу увеличивает атаку всех членов отряда на 66 / 81 / 95 в течение 300 секунд. Как и у большей части еды, эффект этого блюда не действует на персонажей других игроков в Режиме совместной игры.
@@ -134,13 +114,16 @@
                 </div>
             </div>    
             <ul class="recipe__list">
-                <li class="recipe__img">
-                    <img src="img/eat.png" alt="">
-                </li>
-                <li class="recipe__item">Молоко х3 <a href="#">Vieu</a></li>
-                <li class="recipe__item">Сахар х1 <a href="#">Vieu</a></li>
-                <li class="recipe__item">Мендаль х3 <a href="#">Vieu</a></li>
-                <li class="recipe__item">Молоко х1 <a href="#">Vieu</a></li>
+                <?php
+                    if(isset($_GET['id'])){
+                        echo "<li class='recipe__img'><img src='img/eatlib/{$res[$_GET['id']]['img_name']}' alt=''> </li>";
+                        foreach($res[$_GET['id']]['recipe'] as $item=>$count){
+                            echo "<li class='recipe__item'>{$item} х{$count} <a href='#'>Vieu</a></li>";
+                        }
+                    }
+                    
+                ?>
+               
             </ul>
         </div>
     </div>
