@@ -67,11 +67,11 @@
                     <li class="sidebar__label">
                         <div class="cnt">
                             <img src="img/globe.svg" alt="Logo">  
-                            RS 
+                            Menu 
                         </div>
                     </li>
                     <?php
-                    for($i=0;$i<10;$i++)
+                    
                         foreach($res as $id=>$val){
                             echo"<a href='?id={$id}'><li class='sidebar__item'>{$val['name']}</li></a>";
                         }
@@ -84,7 +84,7 @@
             <ul class="sidebar__menu">
             <!-- <li class="sidebar__item bugar__item">Яблоки</li> -->
             <?php
-                    for($i=0;$i<10;$i++)
+                    
                         foreach($res as $id=>$val){
                             echo"<a href='?id={$id}'><li class='sidebar__item bugar__item'>{$val['name']}</li></a>";
                         }
@@ -107,10 +107,14 @@
                 ?>
                 
                 <div class="info__container__text">
-                    <p>Миндальный тофу — это еда, которую может приготовить игрок. Рецепт Миндального тофу можно получить, исследуя кухонный стол на кухне Постоялого двора «Ваншу». Блюдо Миндальный тофу также можно купить у Верр Голдет на Постоялом дворе «Ваншу» за 1,550 Моры (максимум 2 в день).
-                        В зависимости от качества, Миндальный тофу увеличивает атаку всех членов отряда на 66 / 81 / 95 в течение 300 секунд. Как и у большей части еды, эффект этого блюда не действует на персонажей других игроков в Режиме совместной игры.
-                        
-                        Когда Сяо готовит Миндальный тофу, у него есть шанс приготовить «Сладкий сон» вместо этого.</p>
+                    <?php
+                        if(isset($_GET['id'])){
+                            echo"<p >{$res[$_GET['id']]['description']}</p>";
+                        }
+                        else{
+                            echo'<p >Миндальный тофу — это еда, которую может приготовить игрок. Рецепт Миндального тофу можно получить, исследуя кухонный стол на кухне Постоялого двора «Ваншу». Блюдо Миндальный тофу также можно купить у Верр Голдет на Постоялом дворе «Ваншу» за 1,550 Моры</p>';
+                        }
+                    ?>
                 </div>
             </div>    
             <ul class="recipe__list">
@@ -118,7 +122,7 @@
                     if(isset($_GET['id'])){
                         echo "<li class='recipe__img'><img src='img/eatlib/{$res[$_GET['id']]['img_name']}' alt=''> </li>";
                         foreach($res[$_GET['id']]['recipe'] as $item=>$count){
-                            echo "<li class='recipe__item'>{$item} х{$count} <a href='#'>Vieu</a></li>";
+                            echo "<li class='recipe__item'>{$item} х{$count} <a href='#'>view</a></li>";
                         }
                     }
                     
