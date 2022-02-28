@@ -2,8 +2,14 @@
     $res = file_get_contents('db.json');
 
     $res = json_decode($res,true);
+    if(!isset($_SESSION['name'])){
+        session_start();
+    }
+    function avtorization($name,$password){
 
-    session_start();
+        return $name=='user' && $password =='qwerty';
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -34,9 +40,38 @@
                 <h1 class="header__title">Recipe Storage</h1>
                 <div class="bugar"></div>
             </div>
+            <form method="POST" class = "header__form" action=".">
             <?php
-            include_once 'login.php';
+            if ($_POST['login'] != NULL || $_POST['pass'] != NULL)
+            {
+                if (avtorization($_POST['login'], $_POST['pass']))
+                    {
+                        $_SESSION['name'] = $_POST['login'];
+                    }
+                else
+                {
+                    $_COOKIE['login']='fail';
+                }
+            }
+            else{
+                // ничего
+            }
+
+            if(isset($_POST['logout'])){
+                session_destroy();
+                unset($_POST);
+                unset($_SESSION);
+                
+            }
+            if(isset($_SESSION['name']))
+                include_once 'logout.php';
+            else{
+                include_once 'login.php';
+            }
+
+            unset($_COOKIE['login']);
             ?>
+            </form>
         </header>
         <!-- /header -->
 
@@ -65,15 +100,11 @@
         <div class="sidebar__bugar">
             <ul class="sidebar__menu">
             <!-- <li class="sidebar__item bugar__item">Яблоки</li> -->
-            <?php
-                    
+            <?php      
                         foreach($res as $id=>$val){
                             echo"<a href='?id={$id}'><li class='sidebar__item bugar__item'>{$val['name']}</li></a>";
                         }
-            ?>
-
-
-            
+            ?>   
         </ul>
     </div> 
         <!-- /sidebar -->
@@ -84,7 +115,12 @@
                         echo"<h1 class='info__name'>{$res[$_GET['id']]['name']}</h1>";
                     }
                     else{
-                        echo'<h1 class="info__name">Привет путешественник!</h1>';
+                        if(isset($_SESSION['name'])){
+                            echo"<h1 class='info__name'>Привет, {$_SESSION['name']}!</h1>";
+                        }else{
+                            echo'<h1 class="info__name">Привет, путешественник!</h1>';
+                        }
+                        
                     }
                 ?>
                 
