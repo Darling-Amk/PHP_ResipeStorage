@@ -2,15 +2,8 @@
     $res = file_get_contents('db.json');
 
     $res = json_decode($res,true);
-    // echo'<pre>';
-    // // print_r($res);
-    // foreach($res as $id=>$val){
-    //     echo "{$id}=>\n";
-    //     echo "\tname:{$val['name']}\n";
-    //     echo "\timg_name:{$val['img_name']}\n";
-    //     echo "\trecipe:{$val['recipe']}\n";
-    // }
-    // echo'</pre>';
+
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -25,10 +18,11 @@
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/info.css">
     <link rel="stylesheet" href="css/resipe.css">
+    <link rel="shortcut icon" href="/img/logo.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Recipe Storage</title>
 </head>
 <body>
 
@@ -40,21 +34,9 @@
                 <h1 class="header__title">Recipe Storage</h1>
                 <div class="bugar"></div>
             </div>
-            <form  class = "header__form" action="">
-                <div class="form_cont">
-                    <label for="header__form__username">Username</label>
-                    <input class = "header__form__username" type="text">
-                </div>
-
-                <div class="form_cont">
-                    <label for="header__form__password">Password</label>
-                    <input class = "header__form__password" type="password">
-                </div>
-                <div class="form_cont">
-                    <label for="header__form__button" class = "hid">subbmit!</label>
-                    <input class = "header__form__button" type="button" value="Login">
-                </div>
-            </form>
+            <?php
+            include_once 'login.php';
+            ?>
         </header>
         <!-- /header -->
 
@@ -132,5 +114,6 @@
         </div>
     </div>
     <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
 </body>
 </html>

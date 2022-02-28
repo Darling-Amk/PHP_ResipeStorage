@@ -1,3 +1,4 @@
+
 .header__container{
     display: flex;
     justify-content: space-between;
@@ -87,6 +88,13 @@
         height: 70px;
         width: 70px;
     }
+}
+.header__form__button:hover{
+    color:white;
+    background-color: #074EE8;
+    border: white;
+    transition-duration: .5s;
+
 }
 .header__form{
     width: 550px;

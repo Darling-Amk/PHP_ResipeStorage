@@ -27,3 +27,17 @@
     color:#000000;
     font-size: 24px;
 }
+@media (min-width:1600px) {
+    .info__container__text{
+        font-size: 36px;
+        line-height: 60px;
+    }
+    .info__name{
+        line-height: 80px;
+        font-size: 84px; 
+    }
+    .info__container{
+        max-width: 900px;
+    }
+
+}
