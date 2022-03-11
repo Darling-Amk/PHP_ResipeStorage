@@ -138,9 +138,9 @@
             <ul class="recipe__list">
                 <?php
                     if(isset($_GET['id'])){
-                        echo "<li class='recipe__img'><img src='img/eatlib/{$res[$_GET['id']]['img_name']}' alt=''> </li>";
+                        echo "<li class='recipe__img'><img src='img/eatlib/{$res[$_GET['id']]['img']}' alt=''> </li>";
                         foreach($res[$_GET['id']]['recipe'] as $item=>$count){
-                            echo "<li class='recipe__item'>{$item} х{$count} <a href='#'>view</a></li>";
+                            echo "<li class='recipe__item'>{$item} {$count} <a href='#'>view</a></li>";
                         }
                     }
                     
