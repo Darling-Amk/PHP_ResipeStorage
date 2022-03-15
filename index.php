@@ -15,7 +15,6 @@
         $sth = $db->prepare("SELECT * FROM users WHERE (name = \"{$name}\") AND (password = \"{$password}\");");
         $sth->execute();
         $array = $sth->fetchAll(PDO::FETCH_ASSOC);
-        
         return count($array)==1;
     }
    
