@@ -1,15 +1,23 @@
 <?php
-    $res = file_get_contents('db.json');
-
-    $res = json_decode($res,true);
     if(!isset($_SESSION['name'])){
         session_start();
     }
-    function avtorization($name,$password){
+    define(DB_NAME,'sqlite/ResipeStorage.db');
 
-        return $name=='user' && $password =='qwerty';
-    }
+    $db = new SQLite3(DB_NAME);
+    $res = file_get_contents('db.json');
+
+    $res = json_decode($res,true);
     
+    function authorization($name,$password){
+        $db = new SQLite3(DB_NAME);
+        $sql = "SELECT * FROM users WHERE (name = \"{$name}\") AND (password = \"{$password}\");";
+        $result = $db->query($sql);
+        $array = $result->fetchArray(SQLITE3_ASSOC);
+        $db->close();
+        return is_array($array);
+    }
+   
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +48,7 @@
     else{
         include_once('mylist.php');
     }  
-
+    // $db->close();
     ?>
 
    </body>
