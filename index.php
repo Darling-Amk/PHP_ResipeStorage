@@ -11,12 +11,12 @@
     $res = json_decode($res,true);
     
     function authorization($name,$password){
-        $db = new SQLite3(DB_NAME);
-        $sql = "SELECT * FROM users WHERE (name = \"{$name}\") AND (password = \"{$password}\");";
-        $result = $db->query($sql);
-        $array = $result->fetchArray(SQLITE3_ASSOC);
-        $db->close();
-        return is_array($array);
+        $db = new PDO('sqlite:'.DB_NAME);
+        $sth = $db->prepare("SELECT * FROM users WHERE (name = \"{$name}\") AND (password = \"{$password}\");");
+        $sth->execute();
+        $array = $sth->fetchAll(PDO::FETCH_ASSOC);
+        
+        return count($array)==1;
     }
    
 ?>
