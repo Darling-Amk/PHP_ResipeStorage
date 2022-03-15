@@ -5,7 +5,7 @@
     }
     define(DB_NAME,'sqlite/ResipeStorage.db');
 
-    $db = new SQLite3(DB_NAME);
+    // $db = new SQLite3(DB_NAME);
     $res = file_get_contents('db.json');
 
     $res = json_decode($res,true);
