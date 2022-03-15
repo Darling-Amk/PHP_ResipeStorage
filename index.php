@@ -4,18 +4,17 @@
         session_start();
     }
     define(DB_NAME,'sqlite/ResipeStorage.db');
-
-    // $db = new SQLite3(DB_NAME);
     $res = file_get_contents('db.json');
 
     $res = json_decode($res,true);
     
     function authorization($name,$password){
-        $db = new PDO('sqlite:'.DB_NAME);
-        $sth = $db->prepare("SELECT * FROM users WHERE (name = \"{$name}\") AND (password = \"{$password}\");");
-        $sth->execute();
-        $array = $sth->fetchAll(PDO::FETCH_ASSOC);
-        return count($array)==1;
+        // $db = new PDO('sqlite:'.DB_NAME);
+        // $sth = $db->prepare("SELECT * FROM users WHERE (name = \"{$name}\") AND (password = \"{$password}\");");
+        // $sth->execute();
+        // $array = $sth->fetchAll(PDO::FETCH_ASSOC);
+        // return count($array)==1;
+        return false;
     }
    
 ?>
@@ -48,7 +47,7 @@
     else{
         include_once('mylist.php');
     }  
-    // $db->close();
+
     ?>
 
    </body>
