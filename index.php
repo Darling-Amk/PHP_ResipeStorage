@@ -3,7 +3,7 @@
     if(!isset($_SESSION['name'])){
         session_start();
     }
-    define(DB_NAME,'sqlite/ResipeStorage.db');
+    // define(DB_NAME,'sqlite/ResipeStorage.db');
     $res = file_get_contents('db.json');
 
     $res = json_decode($res,true);
