@@ -14,7 +14,7 @@
         $sth->execute();
         $array = $sth->fetchAll(PDO::FETCH_ASSOC);
         return count($array)==1;
-        return false;
+        // return false;
     }
    
 ?>
@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/info.css">
     <link rel="stylesheet" href="css/resipe.css">
+    <link rel="stylesheet" href="css/music.css">
     <link rel="shortcut icon" href="/img/logo.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

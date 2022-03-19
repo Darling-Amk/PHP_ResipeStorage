@@ -6,39 +6,74 @@
                 <h1 class="header__title">Recipe Storage</h1>
                 <div class="bugar"></div>
             </div>
-            <form method="POST" class = "header__form" action=".">
-            <?php
-            if ($_POST['login'] != NULL || $_POST['pass'] != NULL)
-            {
-                if (authorization($_POST['login'], $_POST['pass']))
-                    {
-                        $_SESSION['name'] = $_POST['login'];
-                    }
-                else
+
+            
+            <div class="cnt_t">
+                <form method="POST" class = "header__form" action=".">
+                <?php
+                if ($_POST['login'] != NULL || $_POST['pass'] != NULL)
                 {
-                    $_COOKIE['login']='fail';
+                    if (authorization($_POST['login'], $_POST['pass']))
+                        {
+                            $_SESSION['name'] = $_POST['login'];
+                        }
+                    else
+                    {
+                        $_COOKIE['login']='fail';
+                    }
                 }
-            }
-            else{
-                // ничего
-            }
+                else{
+                    // ничего
+                }
 
-            if(isset($_POST['logout'])){
-                session_destroy();
-                unset($_POST);
-                unset($_SESSION);
+                if(isset($_POST['logout'])){
+                    session_destroy();
+                    unset($_POST);
+                    unset($_SESSION);
+                    
+                }
+                if(isset($_SESSION['name']))
+                    include_once 'logout.php';
+                else{
+                    include_once 'login.php';
+                }
+
+                unset($_COOKIE['login']);
+                ?>
+                </form>
                 
-            }
-            if(isset($_SESSION['name']))
-                include_once 'logout.php';
-            else{
-                include_once 'login.php';
-            }
+                
+                        <div class="player">
+                            <div class="sound">
+                                <div class="player__title">
+                                ✨  Genshin Impact Main Theme ✨       
+                                    <!-- Genshin Impact Lofi ✨ 1 Hour Lofi Hip Hop -->
+                                </div>
+                            
+                                <div class="play">
+                                    <audio src="./audio/2.mp3" class=audio></audio>
+                                    <div class="player__button">
+                                        <div class="mini_btn"> ♫ Play ♫</div>
+                                        <img class="player__button_img" src="./img/play.png" alt="">
+                                    </div>
 
-            unset($_COOKIE['login']);
-            ?>
-            </form>
+                                    <div class="progres">
+                                        <div class="prog_all">
+                                            <div class="prog"></div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
         </header>
+        
+        
+            
+            
+        
         <!-- /header -->
 
 

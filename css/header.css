@@ -3,17 +3,17 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 2px   solid #AAAAAA;
-    height: 126px;
+    height: 146px;
 }
 
 @media (max-width:1440px){
     .header__container{
-        height: 146px;
+        height: 166px;
     }
 }
 @media (max-width:1024px) {
     .header__container{
-        height: 186px;
+        height: 226px;
     }
     .hid{
         display: none;
@@ -53,6 +53,11 @@
         font-size: 26px;
     }
 
+}
+.cnt_t{
+    display: flex;
+    flex-direction:column;
+    
 }
 .bugar{
     display: none;
