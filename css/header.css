@@ -129,6 +129,7 @@
 }
 @media (max-width:375px){
     .header__form{
+        padding: 0px;
         width:100px;
     }
   

@@ -97,9 +97,32 @@
     height: 8px;
 }
 @media (max-width:375px) {
+    
     .player{
         width:100px;
+        padding: 0px;
+        margin: 0px;
+    }
+    .mini_btn{
+        width: 100px;
+        padding: 0px;
+        margin: 0px;
+    }
+    .player__button{
+        width: 100px;
+        padding: 0px;
+        margin: 0px;
+    }
+    .cnt_t{
+        width: 100px;
+
     }
 }
 
-
+@media (max-width:425px) {
+    .cnt_t{
+        width: 176px;
+        padding: 0px;
+        margin: 0px;
+    }
+}
